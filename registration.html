@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ShopOnline</title>
+    <link rel="stylesheet" href="css2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">ShopOnline</div>
+        <nav>
+            <ul>
+                <li><a href="htmal.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section">
+        <h2>Create Your Account</h2>
+        <form class="registration-form" action="submit_registration.php" method="post">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <p>Already have an account? <a href="#">Login here</a>.</p>
+    </section>
+    <script>
+        const form = document.querySelector('.registration-form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+    
+        form.addEventListener('submit', function(event) {
+            if (password.value !== confirmPassword.value) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+            }
+        });
+    </script>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 ShopOnline. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
